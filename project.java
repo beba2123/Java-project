@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class product{ 
     private int warranty;
     private String name;
@@ -50,6 +53,16 @@ class product{
     }
 
 }
+class serviceAddingProucts{
+    List<product> products = new ArrayList<>();
+
+    public void addProduct(product obj){
+        products.add(obj); 
+    }
+    public List<product> getProducts(){
+        return products;
+    }
+}
 
 
 
@@ -58,7 +71,17 @@ class product{
 
 public class project{
     public static void main(String[] args) {
-        product obj = new product();
-          System.out.println(obj);
+        serviceAddingProucts obj2 = new serviceAddingProucts();
+        // product obj = 
+        obj2.addProduct(new product("laptop" , "Asus-vivo", "Adiss Ababa",  2));
+        obj2.addProduct(new product("laptop-1" , "Lenovo", "Adiss Ababa",  2));
+        obj2.addProduct(new product("laptop-2" , "Hp-Pavilion", "Adiss Ababa",  2));
+        obj2.addProduct(new product("laptop-3" , "Dell", "Adiss Ababa",  2));
+
+        List<product> products = obj2.getProducts(); //give me all  the product inside the list..
+        for(product Li : products){
+            System.out.println(Li);
+        }
+       
     }
 }
